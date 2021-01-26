@@ -13,3 +13,11 @@ function concatenate() { //practicing concatenating a sentence
     practice += " how to concatenate a sentence"; 
     document.getElementById("combine").innerHTML = practice
 }
+
+function add() {
+    var x = 788;
+    var y = 212;
+    var z = x+y;
+    document.getElementById("add").innerHTML = z
+
+}
