@@ -1,11 +1,7 @@
 function my_dictionary() {
-    var sports= { 
-    basketball:"Jordan",
-    football:"Favre",
-    baseball:"Bonds",
-    golf:"Tiger"
-    };
-    delete sports.baseball;
-    document.getElementById("demo").innerHTML=sports.baseball
-       
-  }
+    var sports= "basketball"
+      document.write("I love" + sports);
+       }
+function favorite () {
+  document.write("my favorite sport is" + sports);
+}
