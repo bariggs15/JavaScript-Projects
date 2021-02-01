@@ -3,6 +3,10 @@ html {
     box-sizing: border-box;
 }
 
+h1 {
+    text-align: center;
+}
+
 *, *::before, *::after {
     margin: 0;
     padding: 0;
