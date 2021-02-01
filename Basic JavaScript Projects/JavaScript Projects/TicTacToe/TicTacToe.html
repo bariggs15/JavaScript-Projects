@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> Three in a Row! </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link  rel="stylesheet" href="./CSS/game.css">
+        <script src="./JS/tictactoe.js"></script>
+    </head>
+        <h1>Who can get three in a row?</h1>
+
+   <body id='body'>
+       <!-- This container is needed to overlay our canvas over our table-->
+       <div class='center-container'>
+           <!--Note canvas width and height must be set within the element-->
+           <canvas id = 'win-lines' width="608" height="608"></canvas>
+           <table>
+               <tr>
+                   <td id='0' onclick='placexoro("0")'></td>
+                   <td id='1' onclick='placexoro("1")'></td>
+                   <td id='2' onclick='placexoro("2")'></td>
+               </tr>
+               <tr>
+                   <td id='3' onclick='placexoro("3")'></td>
+                   <td id='4' onclick='placexoro("4")'></td>
+                   <td id='5' onclick='placexoro("5")'></td>
+               </tr>
+               <tr>
+                   <td id='6' onclick='placexoro("6")'></td>
+                   <td id='7' onclick='placexoro("7")'></td>
+                   <td id='8' onclick='placexoro("8")'></td>
+            </tr>
+           </table>
+       </div>
+              
+   </body>
+  
+</html>
