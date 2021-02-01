@@ -69,12 +69,12 @@ function Calculator_Reset() {
     Calculator.operator = null;
 }
 
-function Update_Display() {
+function Update_Display() {//update screen with contents of display value
     const display = document.querySelector('.calculator-screen');
     display.value = Calculator.Display_Value;
 }
 
-Update_Display();
+Update_Display(); //monitors button clicks
 const keys = document.querySelector('.calculator-keys'); 
 keys.addEventListener('click', (event) => {
     const {target} = event;
