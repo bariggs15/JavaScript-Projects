@@ -19,6 +19,7 @@ function placexoro(squarenumber) {
         }
         //square number and activeplayer are concatenated together and added to array
         selectedsquares.push(squarenumber + activeplayer); 
+        checkwinconditions(); 
         //function to check win conditions
         if (activeplayer === 'x') {
             // if not - o
@@ -28,7 +29,7 @@ function placexoro(squarenumber) {
             activeplayer = 'x';
         }
         //this function plays placement sound
-        Audio('./media/place.mp3');
+        audio('./media/place.mp3');
         //checks to see if computers turn
         if(activeplayer==='o'){
             disableclick();
@@ -78,7 +79,7 @@ function checkwinconditions() {
     //if a tie
     else if (selectedsquares.length >= 9) {
         //tie sounds
-        Audio('./media/tie.mp3');
+        audio('./media/tie.mp3');
         //.3 seconds timer before reset game is called
         setTimeout(function () { resetgame(); }, 1000);
     }
@@ -101,13 +102,13 @@ function disableclick() { //makes body elements temporarily unclickable
 }
 
 function audio(audiourl) {
-    let audio = new audio(audiourl);
+    let audio = new Audio(audiourl);
     audio.play();
 }
 
 function drawwinline(coordx1, coordy1, coordx2, coordy2) {//html canvas to draw win lines
     const canvas = document.getElementById('win-lines');
-    const c = canvas.getcontext('2d'); //gives access to methods and properties on canvas
+    const c = canvas.getContext('2d'); //gives access to methods and properties on canvas
     let x1=coordx1,//indicates where to start on x and y axis
     y1=coordy1,
     x2=coordx2, //indicates where to end on x and y axis
@@ -118,12 +119,12 @@ function drawwinline(coordx1, coordy1, coordx2, coordy2) {//html canvas to draw 
     function animatelinedrawing() {//interacts with canvas
     //create a loop for when game ends and restarts
         const animationloop = requestAnimationFrame(animatelinedrawing);
-        c.clearreact(0,0,608,608); //clear cont from last iteration
-        c.beginpath();//starts new path
-        c.moveto(x1,y1);//starting point 
-        c.lineto(x,y);//end point
-        c.linewidth= 10;
-        cstrokestyle='rgba(70,255,33,0.8)';
+        c.clearRect(0,0,608,608); //clear cont from last iteration
+        c.beginPath();//starts new path
+        c.moveTo(x1,y1);//starting point 
+        c.lineTo(x,y);//end point
+        c.lineWidth= 10;
+        c.strokeStyle='rgba(70,255,33,0.8)';
         c.stroke();//draws everything laid out
         if (x1 <= x2 && y1 <= y2) {//checks if we've reach endpoint
             if(x < x2) { x +=10; }
@@ -139,7 +140,7 @@ function drawwinline(coordx1, coordy1, coordx2, coordy2) {//html canvas to draw 
     
     function clear() {//clears canvas after game
         const animationloop = requestAnimationFrame(clear); //line starts our animation loop
-        c.clearreact(0,0,608,608);
+        c.clearRect(0,0,608,608);
         cancelAnimationFrame (animationloop);
     }
     disableclick();//no clicking while sound playing
