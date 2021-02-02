@@ -14,7 +14,7 @@ function Input_Digit(digit) {//modifies value each time a button is clicked
         Calculator.Wait_Second_Operand = false;
     } else {
         //overwrite displayvalue if current value is 0, otherwise will add to it
-        Calculator.Display_Value === '0' ? digit : Display_Value + digit;
+        Calculator.Display_Value = Display_Value === '0' ? digit : Display_Value + digit;
     }
 
 }
@@ -22,7 +22,7 @@ function Input_Digit(digit) {//modifies value each time a button is clicked
 function Input_Decimal(dot) {
     ///handles decimals
     if (Calculator.Wait_Second_Operand === true) return;
-    if (!Calculator.Wait_Second_Operand.includes(dot)) {
+    if (!Calculator.Display_Value.includes(dot)) {
         ///saying that if the display value doesn't have a decimal we want to add one
         Calculator.Display_Value += dot;
     }
