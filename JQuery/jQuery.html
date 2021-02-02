@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
+    <body>
+    <script>
+    $(document).ready(function(){
+        $("html").append(
+            "<body>\
+                <div id='container'>\
+                    <div id = 'inner'>\
+                        <h1>Basic JQuery</h1>\
+                        <p id='1'> Paragraph 1</p>\
+                        <p id='2'> Paragraph 2</p>\
+                        <p id='3'> Paragraph 3</p>\
+                    </div>\
+                </div>\
+            </body>"
+        );
+        $("#2").css({"color":"red"});
+        $("#3").click(function() {
+            $('h1').hide();
+        });
+       
+        }) 
+
+        
+    $("#1").one("click",firstClick); //click on p1 and says log
+        function firstClick() {
+            console.log("you just clicked this for the first time!");
+            $(this).click(function() {console.log("you already clicked this"); } );
+        }
+     $( "p" ).hide( "slow" );
+ 
+        // Quickly show all divs that have the hidden style class
+    $( "div.hidden" ).show( "fast" );
+
+    $( "p" ).click(function() {
+    console.log( "You clicked a paragraph!" );
+    });
+
+
+
+    </script>
+</html>
