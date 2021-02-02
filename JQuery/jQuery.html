@@ -27,12 +27,16 @@
             console.log("you just clicked this for the first time!");
             $(this).click(function() {console.log("you already clicked this"); } );
         }
-        $( "p" ).click(function() {
-            console.log( "You clicked a paragraph!" );
+        $( "p" ).hide( "slow" );
+ 
+               $( "p" ).click(function() {
+        console.log( "You clicked a paragraph!" );
         });
-            }) 
-            
+        }) 
+ 
         
+
+
 
     </script>
 </html>
