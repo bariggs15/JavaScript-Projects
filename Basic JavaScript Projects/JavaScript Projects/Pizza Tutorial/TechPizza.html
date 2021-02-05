@@ -4,14 +4,17 @@
 		<title>Pizza Drill Demo</title>
 		<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
 		<meta content="width=device-width,initial-scale=1.0" name="viewport">
-		<link rel = "stylesheet"   type = "text/css" href = "Pizza_CSS/Pizza.css" />
-
+		<link rel = "stylesheet"   type = "text/css" href = "./CSS/TechPizza.css" />
+		<script src="./JS/TechPizza.js"></script>
+		<script> document.body.classList.add('fade-out'); 
+		</script>
 	</head>
 	<body>
 		<div id="menuBG">
 			<h1 style="margin:0 0px 0 20px;">Pizza Drill Tutorial</h1>
 			<input id="btnOrder" type="button" onclick="getReceipt()" 
 				value="Place Order">
+				
 			<form id="frmMenu">
 				<div class="menu left">
 					<h3>Size:</h3>
@@ -41,12 +44,40 @@
       					  <input class="toppings" type="checkbox" name="Topping" value="Salami"> Salami<br>
 					</div>
 
+					<!--popup-->
+					<!--<hr> tag-->
+
+					<hr>
+
+					<button class="open-button" onclick="openForm()">Open Form</button>
+					<div class="form-popup" id="myForm1">
+						<form action="/action_page.php" class="form-container">
+						<h1>Login</h1>
+					
+						<label for="email"><b>Email</b></label>
+						<input type="text" placeholder="Enter Email" name="email" required>
+					
+						<label for="psw"><b>Password</b></label>
+						<input type="password" placeholder="Enter Password" name="psw" required>
+					
+						<button type="submit" class="btn">Login</button>
+						<button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
+					</form>
+				</div>
+
+
   			    <div id="cart">
 					<div id="showText"></div>
 					<div id="totalPrice"></div>
 				</div>
+				<form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+					<label for="Phone Number">Phone Number:</label><br>
+					<input type="text" id="phone" name="phone_number"><input type="submit" value="Submit"><br>
+					
+					
+						</form>
+				</form>
 			</form>
 		</div>
-		<script src="Pizza_JavaScript/Pizza.js"></script>
 	</body>
 </html>

@@ -1,0 +1,18 @@
+<p id = "basketball">
+
+
+<script>
+    var Kevin_Durant = {team: "NJ Nets", position: "SF", height: "7ft"};
+    var JSONstring = JSON.stringify(Kevin_Durant);
+    document.getElementById("basketball").innerHTML=JSONstring;
+</script>
+<script>
+    var Kevin_Durant1 = {team: "NJ Nets", position: "SF", height: "7ft"};
+    var JSONstring1 = JSON.parse(Kevin_Durant1);
+    document.getElementById("basketball").innerHTML="Kevin Durant" + JSONstring1.height + JSONstring1.position + "for the " + JSONstring1.team;
+</script>
+<script>
+    localStorage.setItem("team", "NJ Nets");
+   document.getElementById("basketball").innerHTML=localStorage.getItem("team");
+</script>
+</p> 

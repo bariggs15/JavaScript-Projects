@@ -54,3 +54,19 @@ function getTopping(runningTotal,text1) {
 	document.getElementById("showText").innerHTML=text1;
 	document.getElementById("totalPrice").innerHTML = "</h3>Total: <strong>$"+runningTotal+".00"+"</strong></h3>";
 };	
+
+function validateForm() {
+	var x = document.forms["myForm"]["phone_number"].value;
+	if (x == "") {
+	  alert("Name must be filled out");
+	  return false;
+	}
+  }
+
+function openForm() {
+document.getElementById("myForm1").style.display = "block";
+}
+
+function closeForm() {
+document.getElementById("myForm1").style.display = "none";
+}
